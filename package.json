@@ -1,16 +1,19 @@
 {
   "name": "hardhat-contracts-starterkit",
-  "version": "1.0.0",
-  "description": "",
+  "version": "contracts-upgradeable",
+  "description": "Allow contracts upgrade using UUPS proxy pattern",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "npx hardhat compile",
+    "tests": "npx hardhat test",
+    "deploy_v1": "npx hardhat run ./scripts/helloworld_deploy_v1.js --network localhost",
+    "upgrade_v2": "npx hardhat run ./scripts/helloworld_upgrade_v2.js --network localhost"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/meng7171/hardhat-contracts-starterkit.git"
   },
-  "author": "",
+  "author": "meng7171",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/meng7171/hardhat-contracts-starterkit/issues"
@@ -20,10 +23,15 @@
     "@nomiclabs/hardhat-ethers": "^2.0.6",
     "@nomiclabs/hardhat-etherscan": "^3.0.4",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
-    "ethers": "^5.6.8",
+    "@openzeppelin/contracts-upgradeable": "^4.7.0",
+    "@openzeppelin/hardhat-upgrades": "^1.19.0",
+    "chai": "^4.3.6",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.9",
     "hardhat": "^2.9.7"
+
   },
   "dependencies": {
-    "dotenv": "^9.0.2"
+    "dotenv": "^10.0.0"
   }
 }
